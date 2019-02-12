@@ -1,0 +1,23 @@
+{
+  "name": "fountain-autocomplete",
+  "main": "./lib/fountain-autocomplete",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "fountain-autocomplete:toggle"
+  },
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "4.0.0": "getProvider"
+      }
+    }
+  },
+  "repository": "https://github.com/atom/fountain-autocomplete",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}
