@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle fountain-autocomplete",
-        "command": "fountain-autocomplete:toggle"
+        "label": "Toggle autocomplete-fountain",
+        "command": "autocomplete-fountain:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "fountain-autocomplete",
+          "label": "autocomplete-fountain",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "fountain-autocomplete:toggle"
+              "command": "autocomplete-fountain:toggle"
             }
           ]
         }

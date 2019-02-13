@@ -1,6 +1,6 @@
 'use babel';
 
-import FountainAutocomplete from '../lib/fountain-autocomplete';
+import FountainAutocomplete from '../lib/autocomplete-fountain';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
@@ -12,32 +12,32 @@ describe('FountainAutocomplete', () => {
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('fountain-autocomplete');
+    activationPromise = atom.packages.activatePackage('autocomplete-fountain');
   });
 
-  describe('when the fountain-autocomplete:toggle event is triggered', () => {
+  describe('when the autocomplete-fountain:toggle event is triggered', () => {
     it('hides and shows the modal panel', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.fountain-autocomplete')).not.toExist();
+      expect(workspaceElement.querySelector('.autocomplete-fountain')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'fountain-autocomplete:toggle');
+      atom.commands.dispatch(workspaceElement, 'autocomplete-fountain:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.fountain-autocomplete')).toExist();
+        expect(workspaceElement.querySelector('.autocomplete-fountain')).toExist();
 
-        let fountainAutocompleteElement = workspaceElement.querySelector('.fountain-autocomplete');
+        let fountainAutocompleteElement = workspaceElement.querySelector('.autocomplete-fountain');
         expect(fountainAutocompleteElement).toExist();
 
         let fountainAutocompletePanel = atom.workspace.panelForItem(fountainAutocompleteElement);
         expect(fountainAutocompletePanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'fountain-autocomplete:toggle');
+        atom.commands.dispatch(workspaceElement, 'autocomplete-fountain:toggle');
         expect(fountainAutocompletePanel.isVisible()).toBe(false);
       });
     });
@@ -51,11 +51,11 @@ describe('FountainAutocomplete', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.fountain-autocomplete')).not.toExist();
+      expect(workspaceElement.querySelector('.autocomplete-fountain')).not.toExist();
 
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'fountain-autocomplete:toggle');
+      atom.commands.dispatch(workspaceElement, 'autocomplete-fountain:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -63,9 +63,9 @@ describe('FountainAutocomplete', () => {
 
       runs(() => {
         // Now we can test for view visibility
-        let fountainAutocompleteElement = workspaceElement.querySelector('.fountain-autocomplete');
+        let fountainAutocompleteElement = workspaceElement.querySelector('.autocomplete-fountain');
         expect(fountainAutocompleteElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'fountain-autocomplete:toggle');
+        atom.commands.dispatch(workspaceElement, 'autocomplete-fountain:toggle');
         expect(fountainAutocompleteElement).not.toBeVisible();
       });
     });
