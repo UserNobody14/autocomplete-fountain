@@ -14,7 +14,7 @@
       }
     }
   },
-  "repository": "https://github.com/atom/autocomplete-fountain",
+  "repository": "https://github.com/UserNobody14/autocomplete-fountain.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
