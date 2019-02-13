@@ -1,7 +1,7 @@
 {
   "name": "fountain-autocomplete",
   "main": "./lib/fountain-autocomplete",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A short description of your package",
   "keywords": [],
   "activationCommands": {
@@ -19,5 +19,7 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "atom-slick": "^2.0.0"
+  }
 }
