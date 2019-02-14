@@ -3,7 +3,7 @@
   "main": "./lib/autocomplete-fountain",
   "version": "0.0.2",
   "description": "A short description of your package",
-  "keywords": [],
+  "keywords": ["fountain", "autocomplete"],
   "activationCommands": {
     "atom-workspace": "autocomplete-fountain:toggle"
   },
